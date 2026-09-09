@@ -1,0 +1,12 @@
+{
+  "calls": 0,
+  "trajectories": 240,
+  "call_rate": 0.0,
+  "input_tokens_total": 0,
+  "output_tokens_total": 0,
+  "input_tokens_per_trajectory": 0.0,
+  "output_tokens_per_trajectory": 0.0,
+  "cost_usd_total": 0,
+  "cost_usd_per_trajectory": 0.0,
+  "failed_calls": 0
+}

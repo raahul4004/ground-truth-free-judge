@@ -1,0 +1,26 @@
+{
+  "n": 480,
+  "invalid_or_missing": 0,
+  "balanced_accuracy": 0.8503,
+  "mcc": 0.6994,
+  "confidence_auroc_applicability": "defined",
+  "confidence_auroc": 0.8352,
+  "ece": 0.0265,
+  "cohens_kappa_reported_only": 0.6993,
+  "predicted_pass_rate": 0.6771,
+  "gold_pass_rate": 0.6792,
+  "categories": {
+    "handled_clean": 197,
+    "handled_by_escalation": 128,
+    "unclassified_failure": 63,
+    "run_never_closed": 38,
+    "closed_with_no_action": 15,
+    "mandatory_escalation_missed": 11,
+    "over_limit_action_taken": 8,
+    "identity_unresolved_not_escalated": 7,
+    "unverified_money_movement": 5,
+    "escalated_and_acted": 4,
+    "payment_move_by_new_schedule": 3,
+    "claimed_action_not_performed": 1
+  }
+}

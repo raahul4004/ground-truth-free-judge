@@ -1,0 +1,10 @@
+[
+ "gate_no_commit",
+ "has_empty_assistant_turn",
+ "gate_inert_commit",
+ "pol_m_mandatory_escalation_missed",
+ "commit_claims_no_action",
+ "pol_m_unverified_closed_without_escalation",
+ "pol_v_refused_then_no_escalation",
+ "pol_v_schedule_date_out_of_window"
+]

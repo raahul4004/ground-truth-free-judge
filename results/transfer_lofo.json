@@ -1,0 +1,132 @@
+{
+  "threshold": 0.525,
+  "arms": {
+    "full system": {
+      "n": 480,
+      "balanced_accuracy": 0.7881,
+      "mcc": 0.5753,
+      "confidence_auroc": 0.7706,
+      "ece": 0.0438,
+      "cohens_kappa": 0.5753,
+      "accuracy": 0.8146,
+      "predicted_pass_rate": 0.6771,
+      "gold_pass_rate": 0.6792
+    },
+    "without policy features": {
+      "n": 480,
+      "balanced_accuracy": 0.7774,
+      "mcc": 0.5477,
+      "confidence_auroc": 0.7669,
+      "ece": 0.0581,
+      "cohens_kappa": 0.5473,
+      "accuracy": 0.8,
+      "predicted_pass_rate": 0.6625,
+      "gold_pass_rate": 0.6792
+    },
+    "without escalation-required only": {
+      "n": 480,
+      "balanced_accuracy": 0.7789,
+      "mcc": 0.5515,
+      "confidence_auroc": 0.7688,
+      "ece": 0.0539,
+      "cohens_kappa": 0.5512,
+      "accuracy": 0.8021,
+      "predicted_pass_rate": 0.6646,
+      "gold_pass_rate": 0.6792
+    },
+    "without family one-hots": {
+      "n": 480,
+      "balanced_accuracy": 0.7912,
+      "mcc": 0.5834,
+      "confidence_auroc": 0.7808,
+      "ece": 0.0594,
+      "cohens_kappa": 0.5834,
+      "accuracy": 0.8187,
+      "predicted_pass_rate": 0.6813,
+      "gold_pass_rate": 0.6792
+    },
+    "without policy AND family": {
+      "n": 480,
+      "balanced_accuracy": 0.7864,
+      "mcc": 0.5738,
+      "confidence_auroc": 0.7438,
+      "ece": 0.0415,
+      "cohens_kappa": 0.5738,
+      "accuracy": 0.8146,
+      "predicted_pass_rate": 0.6813,
+      "gold_pass_rate": 0.6792
+    }
+  },
+  "per_family": {
+    "full system": {
+      "autopay_cancel": 0.9230769230769231,
+      "contact_update": 0.9,
+      "dispute_close": 0.7954545454545454,
+      "dispute_open": 0.75,
+      "document_request": 0.8888888888888888,
+      "fee_waiver": 0.9318181818181818,
+      "hardship_request": 0.75,
+      "identity_challenge": 0.84375,
+      "injected_instruction": 0.6458333333333334,
+      "out_of_scope": 0.9375,
+      "payment_reschedule": 0.425,
+      "statement_request": 0.9423076923076923
+    },
+    "without policy features": {
+      "autopay_cancel": 0.9230769230769231,
+      "contact_update": 0.9,
+      "dispute_close": 0.7954545454545454,
+      "dispute_open": 0.8409090909090909,
+      "document_request": 0.8888888888888888,
+      "fee_waiver": 0.9090909090909091,
+      "hardship_request": 0.75,
+      "identity_challenge": 0.65625,
+      "injected_instruction": 0.6041666666666666,
+      "out_of_scope": 0.90625,
+      "payment_reschedule": 0.4,
+      "statement_request": 0.9423076923076923
+    },
+    "without escalation-required only": {
+      "autopay_cancel": 0.9038461538461539,
+      "contact_update": 0.9,
+      "dispute_close": 0.7727272727272727,
+      "dispute_open": 0.8636363636363636,
+      "document_request": 0.8611111111111112,
+      "fee_waiver": 0.8409090909090909,
+      "hardship_request": 0.75,
+      "identity_challenge": 0.6875,
+      "injected_instruction": 0.6666666666666666,
+      "out_of_scope": 0.96875,
+      "payment_reschedule": 0.425,
+      "statement_request": 0.9230769230769231
+    },
+    "without family one-hots": {
+      "autopay_cancel": 0.9423076923076923,
+      "contact_update": 0.9,
+      "dispute_close": 0.8409090909090909,
+      "dispute_open": 0.75,
+      "document_request": 0.8888888888888888,
+      "fee_waiver": 0.9090909090909091,
+      "hardship_request": 0.75,
+      "identity_challenge": 0.84375,
+      "injected_instruction": 0.625,
+      "out_of_scope": 0.96875,
+      "payment_reschedule": 0.425,
+      "statement_request": 0.9423076923076923
+    },
+    "without policy AND family": {
+      "autopay_cancel": 0.9230769230769231,
+      "contact_update": 0.9,
+      "dispute_close": 0.8181818181818182,
+      "dispute_open": 0.8863636363636364,
+      "document_request": 0.8888888888888888,
+      "fee_waiver": 0.8636363636363636,
+      "hardship_request": 0.75,
+      "identity_challenge": 0.6875,
+      "injected_instruction": 0.6041666666666666,
+      "out_of_scope": 1.0,
+      "payment_reschedule": 0.45,
+      "statement_request": 0.9423076923076923
+    }
+  }
+}

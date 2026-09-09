@@ -1,0 +1,236 @@
+{
+  "problem": "OP-04",
+  "season": 1,
+  "generated_utc": "2026-09-09T05:01:21+00:00",
+  "claimed": {
+    "dev_balanced_accuracy": 0.8503,
+    "dev_mcc": 0.6994,
+    "dev_ece": 0.0265,
+    "dev_confidence_auroc": 0.8352,
+    "cost_per_trajectory_usd": 0.0,
+    "input_tokens_per_trajectory": 0.0,
+    "output_tokens_per_trajectory": 0.0,
+    "heldout_balanced_accuracy": null,
+    "heldout_mcc": null,
+    "heldout_ece": null,
+    "heldout_confidence_auroc": null
+  },
+  "runs": [
+    {
+      "run_id": "dev-oof-001",
+      "description": "Honest dev estimate. Nested grouped cross-validation on case_id: fold models, Platt calibrator and gates are all refitted inside each outer fold, so no row informs the model that scores it. These are the numbers claimed in submission.yaml.",
+      "seed": 20260915,
+      "model": "none (no model API calls)",
+      "status": "completed",
+      "threshold": 0.525,
+      "input_sha256": "988382bf50dc13283b7dad204129eefe94ba39936e6a284487c8d225ee8e9389",
+      "raw_path": "results/raw/dev_oof_predictions.jsonl",
+      "gold_path": "results/raw/dev_labels.jsonl",
+      "n_rows": 480,
+      "metrics": {
+        "n": 480,
+        "invalid_or_missing": 0,
+        "balanced_accuracy": 0.8503,
+        "mcc": 0.6994,
+        "confidence_auroc_applicability": "defined",
+        "confidence_auroc": 0.8352,
+        "ece": 0.0265,
+        "cohens_kappa_reported_only": 0.6993,
+        "predicted_pass_rate": 0.6771,
+        "gold_pass_rate": 0.6792,
+        "categories": {
+          "handled_clean": 197,
+          "handled_by_escalation": 128,
+          "unclassified_failure": 63,
+          "run_never_closed": 38,
+          "closed_with_no_action": 15,
+          "mandatory_escalation_missed": 11,
+          "over_limit_action_taken": 8,
+          "identity_unresolved_not_escalated": 7,
+          "unverified_money_movement": 5,
+          "escalated_and_acted": 4,
+          "payment_move_by_new_schedule": 3,
+          "claimed_action_not_performed": 1
+        }
+      },
+      "scorer": "data/score.py (organisers', unmodified)",
+      "scorer_sha256": "87ccac064a6ed7d7f778292bbcbd5314c3bd023f77ec84255a8932a371576681",
+      "api_calls": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "run_id": "heldout-001",
+      "description": "Graded artifact. Model trained on all 480 dev rows, predicting the 240 held-out trajectories. Labels are withheld, so no metrics are claimed for this run.",
+      "seed": 20260915,
+      "model": "none (no model API calls)",
+      "status": "completed",
+      "threshold": 0.525,
+      "input_sha256": "a9e606ce14eaae388b34fd19e968cde57dd62a548a8692ecd8c7653e8ea0bcb3",
+      "raw_path": "results/heldout_predictions.jsonl",
+      "debug_path": "results/raw/heldout_debug.jsonl",
+      "n_rows": 240,
+      "metrics": null,
+      "api_calls": 0,
+      "cost_usd": 0,
+      "ledger": {
+        "calls": 0,
+        "trajectories": 240,
+        "call_rate": 0.0,
+        "input_tokens_total": 0,
+        "output_tokens_total": 0,
+        "input_tokens_per_trajectory": 0.0,
+        "output_tokens_per_trajectory": 0.0,
+        "cost_usd_total": 0,
+        "cost_usd_per_trajectory": 0.0,
+        "failed_calls": 0
+      }
+    },
+    {
+      "run_id": "dev-insample-001",
+      "description": "Dev predictions from the shipped model, which was trained on dev. IN-SAMPLE and therefore optimistic; included because the submission schema asks for dev_predictions.jsonl. Do not read metrics off this.",
+      "seed": 20260915,
+      "model": "none (no model API calls)",
+      "status": "completed",
+      "input_sha256": "988382bf50dc13283b7dad204129eefe94ba39936e6a284487c8d225ee8e9389",
+      "raw_path": "results/dev_predictions.jsonl",
+      "n_rows": 480,
+      "metrics": null,
+      "api_calls": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "run_id": "gate-purity-001",
+      "description": "Gate promotion audit: every deterministic check, how often it fires, and the pass rate among the rows it fires on. A check may only override the model at a 0.0000 pass rate.",
+      "status": "completed",
+      "model": "none (no model API calls)",
+      "raw_path": "experiments/gates.json",
+      "gates": [
+        "gate_no_commit",
+        "has_empty_assistant_turn",
+        "gate_inert_commit",
+        "pol_m_mandatory_escalation_missed",
+        "commit_claims_no_action",
+        "pol_m_unverified_closed_without_escalation",
+        "pol_v_refused_then_no_escalation",
+        "pol_v_schedule_date_out_of_window"
+      ],
+      "api_calls": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "run_id": "threshold-001",
+      "description": "Threshold selection on nested dev OOF only. Plateau-centred, tie-broken toward reproducing the dev base rate. The published held-out pass rate (0.6333) was deliberately not used.",
+      "status": "completed",
+      "model": "none (no model API calls)",
+      "raw_path": "results/threshold_selection.json",
+      "chosen_threshold": 0.5250000000000001,
+      "viable_thresholds": [
+        0.3,
+        0.325,
+        0.35000000000000003,
+        0.37500000000000006,
+        0.4000000000000001,
+        0.4250000000000001,
+        0.4500000000000001,
+        0.47500000000000014,
+        0.5000000000000002,
+        0.5250000000000001,
+        0.5500000000000003,
+        0.5750000000000002,
+        0.6000000000000003,
+        0.6250000000000002,
+        0.6500000000000004,
+        0.6750000000000003
+      ],
+      "api_calls": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "run_id": "ablation-001",
+      "description": "Per-layer ablation. Each layer removed on its own rather than a single stacked before/after, so the contribution of each is visible -- including the two arms that measured worse and were dropped.",
+      "status": "completed",
+      "model": "none (no model API calls)",
+      "raw_path": "results/ablation.json",
+      "api_calls": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "run_id": "transfer-lofo-001",
+      "description": "Leave-one-family-out: every row judged by a model trained with its family entirely absent. This is the test that decides whether the policy layer stays, because the private family mix is unpublished.",
+      "status": "completed",
+      "model": "none (no model API calls)",
+      "raw_path": "results/transfer_lofo.json",
+      "api_calls": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "run_id": "audit-50-001",
+      "description": "50 held-out trajectories read by hand against policy.md, verdicts recorded before any label was available. Drove five code fixes.",
+      "status": "completed",
+      "model": "human (candidate)",
+      "raw_path": "results/raw/audit_50_human_verdicts.json",
+      "report_path": "results/audit_50.md",
+      "worksheet_path": "results/audit_50_worksheet.md",
+      "api_calls": 0,
+      "cost_usd": 0.0
+    },
+    {
+      "run_id": "llm-layer-000",
+      "description": "Optional LLM adjudication layer for the uncertain band. Implemented with a metered token ledger but NEVER EXECUTED: no API key was available in the build environment. Reported as not run rather than estimated. Enable with `USE_LLM=1 ./scripts/reproduce.sh`.",
+      "status": "not_run",
+      "model": "gpt-5-mini-2025-08-07",
+      "raw_path": null,
+      "api_calls": 0,
+      "cost_usd": 0.0
+    }
+  ],
+  "configuration": {
+    "architecture": "deterministic gates -> calibrated structural model -> optional LLM band adjudication",
+    "model_api_calls_in_shipped_config": 0,
+    "threshold": 0.525,
+    "gates": [
+      "gate_no_commit",
+      "has_empty_assistant_turn",
+      "gate_inert_commit",
+      "pol_m_mandatory_escalation_missed",
+      "commit_claims_no_action",
+      "pol_m_unverified_closed_without_escalation",
+      "pol_v_refused_then_no_escalation",
+      "pol_v_schedule_date_out_of_window"
+    ],
+    "calibration": "Platt (sigmoid) on grouped out-of-fold scores; isotonic rejected because its ties damage the confidence AUROC",
+    "confidence_definition": "max(p, 1-p) on the calibrated probability of the emitted verdict",
+    "grouping": "GroupKFold on trajectory.case.case_id (four trajectories share each case)",
+    "seed": 20260915
+  },
+  "environment": {
+    "python": "3.14.5",
+    "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+    "hardware": "CPU only; no GPU",
+    "network_required": false
+  },
+  "fixtures": {
+    "dev.jsonl": "988382bf50dc13283b7dad204129eefe94ba39936e6a284487c8d225ee8e9389",
+    "heldout.jsonl": "a9e606ce14eaae388b34fd19e968cde57dd62a548a8692ecd8c7653e8ea0bcb3",
+    "tool_schemas.json": "24fad9350ffd27abb43db19ba123e5f3b6324d69da8391e81d669c25f6475a18",
+    "score.py": "87ccac064a6ed7d7f778292bbcbd5314c3bd023f77ec84255a8932a371576681"
+  },
+  "compliance": {
+    "harbour_imported_or_executed": false,
+    "harbour_source_downloaded": false,
+    "backend_state_reconstructed": false,
+    "tool_calls_replayed_against_simulator": false,
+    "documents_read": [
+      "references/OP-01/harbour/policy.md",
+      "references/HARBOUR.md"
+    ],
+    "gold_fields_visible_to_judge": [],
+    "note": "The judge consumes id + trajectory (case, turns, audited_tool_calls) and tool_schemas.json only. judge.cli.strip_labels removes any label or goal_state field from every row before inference."
+  },
+  "spend": {
+    "results_usd": 0.0,
+    "development_usd": 0.0,
+    "compute_usd": 0.0,
+    "note": "No model API calls were made at any point in development or evaluation."
+  }
+}

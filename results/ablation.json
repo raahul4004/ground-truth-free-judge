@@ -1,0 +1,133 @@
+{
+  "threshold": 0.525,
+  "arms": [
+    {
+      "arm": "full system",
+      "n": 480,
+      "balanced_accuracy": 0.8503,
+      "mcc": 0.6994,
+      "confidence_auroc": 0.8352,
+      "ece": 0.0265,
+      "cohens_kappa": 0.6993,
+      "accuracy": 0.8688,
+      "predicted_pass_rate": 0.6771,
+      "gold_pass_rate": 0.6792
+    },
+    {
+      "arm": "gates removed",
+      "n": 480,
+      "balanced_accuracy": 0.8146,
+      "mcc": 0.6408,
+      "confidence_auroc": 0.7992,
+      "ece": 0.0238,
+      "cohens_kappa": 0.6401,
+      "accuracy": 0.8458,
+      "predicted_pass_rate": 0.7,
+      "gold_pass_rate": 0.6792
+    },
+    {
+      "arm": "- policy checks (pol_*)",
+      "n_features_zeroed": 70,
+      "n": 480,
+      "balanced_accuracy": 0.8656,
+      "mcc": 0.7434,
+      "confidence_auroc": 0.8201,
+      "ece": 0.0501,
+      "cohens_kappa": 0.7427,
+      "accuracy": 0.8896,
+      "predicted_pass_rate": 0.6979,
+      "gold_pass_rate": 0.6792
+    },
+    {
+      "arm": "- escalation-required quadrants",
+      "n_features_zeroed": 7,
+      "n": 480,
+      "balanced_accuracy": 0.8578,
+      "mcc": 0.7246,
+      "confidence_auroc": 0.7908,
+      "ece": 0.0385,
+      "cohens_kappa": 0.7242,
+      "accuracy": 0.8812,
+      "predicted_pass_rate": 0.6937,
+      "gold_pass_rate": 0.6792
+    },
+    {
+      "arm": "- refusal signals",
+      "n_features_zeroed": 17,
+      "n": 480,
+      "balanced_accuracy": 0.8486,
+      "mcc": 0.6983,
+      "confidence_auroc": 0.8351,
+      "ece": 0.0339,
+      "cohens_kappa": 0.6983,
+      "accuracy": 0.8688,
+      "predicted_pass_rate": 0.6813,
+      "gold_pass_rate": 0.6792
+    },
+    {
+      "arm": "- intent + planted-span",
+      "n_features_zeroed": 26,
+      "n": 480,
+      "balanced_accuracy": 0.8371,
+      "mcc": 0.6815,
+      "confidence_auroc": 0.8372,
+      "ece": 0.0324,
+      "cohens_kappa": 0.6812,
+      "accuracy": 0.8625,
+      "predicted_pass_rate": 0.6917,
+      "gold_pass_rate": 0.6792
+    },
+    {
+      "arm": "- family one-hots",
+      "n_features_zeroed": 12,
+      "n": 480,
+      "balanced_accuracy": 0.8405,
+      "mcc": 0.6834,
+      "confidence_auroc": 0.8386,
+      "ece": 0.0209,
+      "cohens_kappa": 0.6834,
+      "accuracy": 0.8625,
+      "predicted_pass_rate": 0.6833,
+      "gold_pass_rate": 0.6792
+    },
+    {
+      "arm": "- loan facts",
+      "n_features_zeroed": 9,
+      "n": 480,
+      "balanced_accuracy": 0.847,
+      "mcc": 0.694,
+      "confidence_auroc": 0.8368,
+      "ece": 0.0271,
+      "cohens_kappa": 0.694,
+      "accuracy": 0.8667,
+      "predicted_pass_rate": 0.6792,
+      "gold_pass_rate": 0.6792
+    },
+    {
+      "arm": "- message lexical",
+      "n_features_zeroed": 9,
+      "n": 480,
+      "balanced_accuracy": 0.8564,
+      "mcc": 0.7166,
+      "confidence_auroc": 0.8378,
+      "ece": 0.0184,
+      "cohens_kappa": 0.7165,
+      "accuracy": 0.8771,
+      "predicted_pass_rate": 0.6854,
+      "gold_pass_rate": 0.6792
+    },
+    {
+      "arm": "- commit-argument features",
+      "n_features_zeroed": 6,
+      "n": 480,
+      "balanced_accuracy": 0.8535,
+      "mcc": 0.7047,
+      "confidence_auroc": 0.8318,
+      "ece": 0.0236,
+      "cohens_kappa": 0.7046,
+      "accuracy": 0.8708,
+      "predicted_pass_rate": 0.675,
+      "gold_pass_rate": 0.6792
+    }
+  ]
+}

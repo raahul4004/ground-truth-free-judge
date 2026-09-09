@@ -1,0 +1,13 @@
+# The organisers' fixtures and documents are theirs; not redistributed here.
+# Point --dev / --input at your own copy of references/OP-04/.
+data/
+brief/
+artifacts/*.pkl
+__pycache__/
+*.pyc
+.DS_Store
+experiments/oof_structural.npy
+
+# Uploaded through the private form, never committed: it references the commit
+# SHA it would otherwise live inside. See SUBMISSION_SCHEMA.md.
+submission.yaml
