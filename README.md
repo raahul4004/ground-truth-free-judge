@@ -1,4 +1,4 @@
-# OP-04 — Judge Without Ground Truth
+# Judge Without Ground Truth
 
 A judge for Harbour loan-servicing trajectories. It reads a run — the customer
 message, the tool calls, and what each tool returned — and emits a verdict, a
